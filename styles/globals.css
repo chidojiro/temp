@@ -1,3 +1,40 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bold;
+  }
+
+  h2 {
+    @apply text-h2;
+  }
+
+  h3 {
+    @apply text-h3;
+  }
+
+  h4 {
+    @apply text-h4;
+  }
+
+  h5 {
+    @apply text-h5;
+  }
+
+  h6 {
+    @apply text-h6;
+  }
+}
+
+@layer utilities {
+  .minimized {
+    @apply h-0 w-0 border-none outline-none m-0 p-0 absolute opacity-0 !important;
+  }
+}
