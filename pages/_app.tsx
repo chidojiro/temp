@@ -1,8 +1,23 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import { appWithTranslation } from 'next-i18next';
+import { AppProps } from 'next/app';
+import Head from 'next/head';
+import React from 'react';
+import '../styles/globals.css';
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+function CustomApp({ Component, pageProps }: AppProps) {
+  React.useEffect(() => {
+    console.log(pageProps);
+  }, []);
+  return (
+    <>
+      <Head>
+        <title>MP</title>
+      </Head>
+      <div className='w-full h-full'>
+        <Component {...pageProps} />
+      </div>
+    </>
+  );
 }
 
-export default MyApp
+export default appWithTranslation(CustomApp);

@@ -1,6 +1,30 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-}
+/* eslint-disable @typescript-eslint/no-var-requires */
+const { i18n } = require('./next-i18next.config');
+const path = require('path');
 
-module.exports = nextConfig
+module.exports = {
+  reactStrictMode: true,
+  i18n,
+  webpack(config) {
+    config.module.rules.push({
+      test: /\.svg$/,
+      issuer: { and: [/\.(js|ts)x?$/] },
+      use: ['@svgr/webpack'],
+    });
+
+    return config;
+  },
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, 'src'),
+    },
+  },
+  // async rewrites() {
+  //   return [
+  //     {
+  //       source: '/:any*/',
+  //       destination: '/'
+  //     }
+  //   ]
+  // }
+};
