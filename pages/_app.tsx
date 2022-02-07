@@ -5,9 +5,6 @@ import React from 'react';
 import '../styles/globals.css';
 
 function CustomApp({ Component, pageProps }: AppProps) {
-  React.useEffect(() => {
-    console.log(pageProps);
-  }, []);
   return (
     <>
       <Head>
