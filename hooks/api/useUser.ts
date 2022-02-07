@@ -1,6 +1,6 @@
-import { User } from '@/models';
-import useSWR, { Middleware, SWRHook } from 'swr';
 import { UserApi } from '@/apis';
+import { User } from '@/types';
+import useSWR from 'swr';
 
 // const swrMiddleware: Middleware = (useSWRNext: SWRHook) => (key, fetcher, config) => {
 //     // Add logger to the original fetcher.
@@ -13,7 +13,7 @@ import { UserApi } from '@/apis';
 // }
 //
 export function useUser(initialValues: User) {
-  const { data, mutate, error } = useSWR<User>('/userInfo', UserApi.me, {
+  const { data, mutate, error } = useSWR<User | null>('/userInfo', UserApi.me, {
     fallbackData: initialValues,
     // use: [swrMiddleware],
     suspense: true,
