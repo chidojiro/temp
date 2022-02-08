@@ -1,5 +1,5 @@
 import React from 'react';
-import { ClassNameUtils } from '@/utils/className';
+import classNames from 'classnames';
 import { Children, ClassName, HTMLButtonProps } from 'types';
 
 type Variant = 'link' | 'outline' | 'solid';
@@ -126,7 +126,7 @@ export const Button = React.forwardRef<HTMLElement, Props>(
         ref={ref}
         {...restProps}
         type={type}
-        className={ClassNameUtils.withTwReplaceable('px-', 'py-', 'bg-', 'rounded')(
+        className={classNames(
           'inline-flex justify-center items-center border rounded select-none',
           'px-6 py-2',
           textColor,

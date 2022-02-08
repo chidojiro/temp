@@ -5,7 +5,6 @@ export { JsonUtils } from './json';
 export { DomUtils } from './dom';
 export { NumberUtils } from './number';
 export { AssertUtils } from './assert';
-export { ClassNameUtils } from './className';
 export { CookiesUtils } from './CookiesUtils';
 export { Debugger } from './Debugger';
 export { Logger } from './Logger';
