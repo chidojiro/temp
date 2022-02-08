@@ -3,6 +3,55 @@
 @tailwind utilities;
 
 @layer base {
+  @font-face {
+    font-family: 'Noto Sans JP';
+    font-weight: normal;
+    font-style: normal;
+    src: local('Noto Sans JP'), url('/fonts/NotoSansJP-Regular.woff') format('woff');
+  }
+
+  @font-face {
+    font-family: 'Noto Sans JP';
+    font-weight: 100;
+    src: local('Noto Sans JP'), url('/fonts/NotoSansJP-Thin.woff') format('woff');
+  }
+
+  @font-face {
+    font-family: 'Noto Sans JP';
+    font-weight: 300;
+    src: local('Noto Sans JP'), url('/fonts/NotoSansJP-Light.woff') format('woff');
+  }
+
+  @font-face {
+    font-family: 'Noto Sans JP';
+    font-weight: 500;
+    src: local('Noto Sans JP'), url('/fonts/NotoSansJP-Medium.woff') format('woff');
+  }
+
+  @font-face {
+    font-family: 'Noto Sans JP';
+    font-weight: 700;
+    src: local('Noto Sans JP'), url('/fonts/NotoSansJP-Bold.woff') format('woff');
+  }
+
+  @font-face {
+    font-family: 'Noto Sans JP';
+    font-weight: 900;
+    src: local('Noto Sans JP'), url('/fonts/NotoSansJP-Black.woff') format('woff');
+  }
+
+  *,
+  ::before,
+  ::after {
+    background-repeat: no-repeat; /* Set `background-repeat: no-repeat` to all elements and pseudo elements */
+    box-sizing: inherit;
+    font-family: 'Noto Sans JP', sans-serif !important;
+  }
+
+  html {
+    box-sizing: border-box;
+  }
+
   h1,
   h2,
   h3,
@@ -10,6 +59,10 @@
   h5,
   h6 {
     @apply font-bold;
+  }
+
+  h1 {
+    @apply text-h1;
   }
 
   h2 {
@@ -28,8 +81,8 @@
     @apply text-h5;
   }
 
-  h6 {
-    @apply text-h6;
+  body {
+    @apply text-regular;
   }
 }
 
