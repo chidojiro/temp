@@ -4,6 +4,7 @@ import { Children, ClassName, HTMLButtonProps } from 'types';
 
 type Variant = 'link' | 'outline' | 'solid';
 type ColorScheme = 'primary' | 'secondary' | 'default' | 'danger';
+type Size = 'xs' | 'sm' | 'md' | 'lg';
 
 const primaryBackgroundColors: { [key in Variant]: string } = {
   link: 'bg-none',
@@ -103,8 +104,8 @@ export type Props = Children &
   ClassName &
   Pick<HTMLButtonProps, 'disabled' | 'type' | 'onClick'> & {
     variant?: Variant;
-    // size?: 'xs' | 'sm' | 'md' | 'lg';
-    colorScheme?: 'primary' | 'secondary' | 'default' | 'danger';
+    // size?: Size;
+    colorScheme?: ColorScheme;
     icon?: React.ReactNode;
     // loading?: boolean;
   };
