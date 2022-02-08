@@ -94,3 +94,7 @@
     @apply cursor-default pointer-events-none opacity-70 !important;
   }
 }
+
+#__next {
+  height: 100%;
+}
