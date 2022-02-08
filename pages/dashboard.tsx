@@ -3,7 +3,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 const Dashboard = () => {
   return (
-    <Layout>
+    <Layout title='menuDashboard'>
       <div className='flex'>dashboard</div>
     </Layout>
   );

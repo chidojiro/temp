@@ -2,7 +2,7 @@ import { Layout } from '@/components';
 
 const Dashboard = () => {
   return (
-    <Layout>
+    <Layout title='Settings'>
       <div className='flex'>settings</div>
     </Layout>
   );

@@ -32,7 +32,7 @@ export const Sidebar = () => {
           <a
             key={menuItem.label}
             href={menuItem.path}
-            className={classNames('flex items-center px-6 py-2.5 hover:bg-dark-gray', {
+            className={classNames('flex text-medium items-center px-6 py-2.5 hover:bg-dark-gray', {
               'bg-dark-gray': menuItem.path === router.pathname,
             })}>
             <ChartBarIcon className='w-4 h-4 mr-2 text-primary' />
