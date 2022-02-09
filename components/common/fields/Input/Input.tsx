@@ -48,7 +48,6 @@ export const Input = React.forwardRef(
 
     const inputRef = React.useRef<HTMLInputElement>(null);
 
-    // temporary solution until JIT is enabled
     const [isFocused, toggleFocus] = useStateToggle();
 
     const { name, pattern } = props;
