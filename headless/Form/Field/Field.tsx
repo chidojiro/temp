@@ -1,4 +1,4 @@
-import { get } from 'lodash';
+import get from 'lodash/get';
 import React from 'react';
 import { RegisterOptions, useController, useFormContext } from 'react-hook-form';
 
@@ -26,7 +26,6 @@ export const Field = <T,>({
   onBlur: onBlurProp,
   defaultValue,
   className,
-  noErrorMessage,
   value: valueProp,
   errorGroup = [],
   emptyValue = '',
