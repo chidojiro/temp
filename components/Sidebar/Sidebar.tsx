@@ -27,7 +27,7 @@ export const Sidebar = () => {
     },
   ];
   return (
-    <div className='flex flex-col bg-white border-r border-gray-200 bg-light-gray'>
+    <div className='flex flex-col bg-white border-r border-gray-600 bg-light-gray'>
       <div className='flex flex-col flex-grow'>
         {menu.map(menuItem => (
           <Link key={menuItem.label} href={menuItem.path}>
