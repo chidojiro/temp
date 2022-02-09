@@ -2,5 +2,9 @@
   "menuDashboard": "ダッシュボード",
   "menuMarketingAction": "実施した施策",
   "menuActions": "施策一覧",
-  "menuSettings": "設定"
+  "menuSettings": "設定",
+  "login": "ログイン",
+  "email": "メールアドレス",
+  "password": "パスワード",
+  "forgotPassword": "パスワードを忘れた方"
 }

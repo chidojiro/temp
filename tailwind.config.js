@@ -163,7 +163,9 @@ module.exports = {
         'input-focus': palette.gray[400],
         'light-gray': palette.gray[800],
         'dark-gray': '#E6E6E6',
+        'dark-gray-1': '#707070',
         yellow: '#FFC400',
+        'light-blue': palette.blue[500],
       },
       fontWeight: {
         semibold: 500,

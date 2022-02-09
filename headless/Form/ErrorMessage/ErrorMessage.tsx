@@ -7,7 +7,7 @@ export type Props = {
   className?: string;
 };
 
-export const ErrorMessage = ({ name }: Props) => {
+export const ErrorMessage = ({ name, className }: Props) => {
   const {
     formState: { errors },
   } = useFormContext();
@@ -18,5 +18,5 @@ export const ErrorMessage = ({ name }: Props) => {
     if (errorMessage) break;
   }
 
-  return <>{errorMessage}</>;
+  return <div className={className}>{errorMessage}</div>;
 };
