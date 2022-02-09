@@ -10,7 +10,7 @@ export type Props = HTMLTextAreaProps & {
 // eslint-disable-next-line no-empty-pattern
 export const TextArea = React.forwardRef(({ className, label, ...restProps }: Props, ref: any) => {
   return (
-    <div className={classNames(className)}>
+    <div className={classNames('mp-textarea', className)}>
       {!!label && (
         <label htmlFor={restProps.name} className='block mb-1 text-gray-5'>
           {label}
