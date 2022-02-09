@@ -4,7 +4,7 @@ const Header = () => {
       <div className='font-bold text-yellow text-h3'>MARKETING PLATFORM</div>
       <div className='font-semibold text-medium'>demo@gmail.com</div>
     </div>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header
