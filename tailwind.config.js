@@ -82,6 +82,16 @@ const palette = {
   sleepy: {
     DEFAULT: '#B4B4B4',
   },
+  gray: {
+    100: '#464646',
+    200: '#797979',
+    300: '#969696',
+    400: '#BFBFBF',
+    500: '#DEDEDE',
+    600: '#E2E2E2',
+    700: '#EFEFEF',
+    800: '#F7F7F7',
+  },
 };
 
 module.exports = {
@@ -112,18 +122,6 @@ module.exports = {
               },
             },
           },
-        },
-      },
-      textColor: {
-        gray: {
-          100: '#464646',
-          200: '#797979',
-          300: '#969696',
-          400: '#BFBFBF',
-          500: '#DEDEDE',
-          600: '#E2E2E2',
-          700: '#EFEFEF',
-          800: '#F7F7F7',
         },
       },
       colors: {
@@ -160,6 +158,7 @@ module.exports = {
         danger: palette.orange.DEFAULT,
         warning: palette.yellow.DEFAULT,
         sleepy: palette.sleepy.DEFAULT,
+        gray: palette.gray,
       },
     },
   },
