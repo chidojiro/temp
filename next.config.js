@@ -14,11 +14,7 @@ module.exports = {
 
     return config;
   },
-  resolve: {
-    alias: {
-      '@': path.resolve(__dirname, 'src'),
-    },
-  },
+
   // async rewrites() {
   //   return [
   //     {
