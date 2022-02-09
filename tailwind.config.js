@@ -159,6 +159,8 @@ module.exports = {
         warning: palette.yellow.DEFAULT,
         sleepy: palette.sleepy.DEFAULT,
         gray: palette.gray,
+        input: palette.gray[600],
+        'input-focus': palette.gray[400],
       },
     },
   },

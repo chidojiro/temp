@@ -106,8 +106,8 @@ export const Input = React.forwardRef(
 
     const isHidden = htmlType === 'hidden';
 
-    const borderClassNames = classNames('border border-gray-600 border-solid', {
-      'border-gray-400': isFocused,
+    const borderClassNames = classNames('border border-input border-solid', {
+      'border-input-focus': isFocused,
       '!border-danger': error,
     });
 
@@ -116,7 +116,6 @@ export const Input = React.forwardRef(
         className={classNames(
           'mp-input',
           'w-full max-w-full relative overflow-hidden bg-white rounded',
-          'border border-gray-600 border-solid',
           borderClassNames,
           {
             minimized: isHidden,
