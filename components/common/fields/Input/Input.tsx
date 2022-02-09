@@ -50,19 +50,13 @@ export const Input = React.forwardRef(
 
     const [isFocused, toggleFocus] = useStateToggle();
 
-    const { name, pattern } = props;
+    const { name } = props;
 
-    if (pattern) {
-      props = {
-        ...props,
-        pattern: pattern,
-        onInput: (ev: React.ChangeEvent<HTMLInputElement>) => {
-          if (!ev.target.checkValidity()) {
-            ev.target.value = '';
-          }
-        },
-      };
-    }
+    const handleInput = (ev: React.ChangeEvent<HTMLInputElement>) => {
+      if (props.pattern && !ev.target.checkValidity()) {
+        ev.target.value = '';
+      }
+    };
 
     const handleFocus: React.FocusEventHandler<HTMLInputElement> = e => {
       onFocus?.(e);
@@ -92,6 +86,7 @@ export const Input = React.forwardRef(
           className={inputClassName}
           type={htmlType}
           {...props}
+          onInput={handleInput}
           onFocus={handleFocus}
           onBlur={handleBlur}
           onKeyDown={handleKeydown}
