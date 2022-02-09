@@ -4,9 +4,9 @@ module.exports = {
   jsxBracketSameLine: true,
   jsxSingleQuote: true,
   printWidth: 120,
-  semi: false,
+  semi: true,
   singleQuote: true,
   tabWidth: 2,
   trailingComma: 'es5',
   useTabs: false,
-};
+}

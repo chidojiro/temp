@@ -1,13 +1,13 @@
-import { ReactNode } from 'react'
-import { Sidebar } from '../Sidebar'
-import Header from './Header'
-import { MainContent } from './MainContent'
+import { ReactNode } from 'react';
+import { Sidebar } from '../Sidebar';
+import { Header } from './Header';
+import { MainContent } from './MainContent';
 
 type Props = {
-  title: string
-  subTitle?: string
-  children: ReactNode
-}
+  title: string;
+  subTitle?: string;
+  children: ReactNode;
+};
 
 export const Layout = ({ title, subTitle, children }: Props) => {
   return (
@@ -20,5 +20,5 @@ export const Layout = ({ title, subTitle, children }: Props) => {
         </MainContent>
       </div>
     </div>
-  )
-}
+  );
+};

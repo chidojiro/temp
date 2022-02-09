@@ -1,13 +1,13 @@
-import { NavItemInfo } from '@/types/navbar'
-import { ChartBarIcon } from '@heroicons/react/solid'
-import classNames from 'classnames'
-import { useTranslation } from 'next-i18next'
-import Link from 'next/link'
-import { useRouter } from 'next/router'
+import { NavItemInfo } from '@/types/navbar';
+import { ChartBarIcon } from '@heroicons/react/solid';
+import classNames from 'classnames';
+import { useTranslation } from 'next-i18next';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 export const Sidebar = () => {
-  const { t } = useTranslation()
-  const router = useRouter()
+  const { t } = useTranslation();
+  const router = useRouter();
   const menu: NavItemInfo[] = [
     {
       path: '/dashboard',
@@ -25,7 +25,7 @@ export const Sidebar = () => {
       path: '/settings',
       label: t('menuSettings'),
     },
-  ]
+  ];
   return (
     <div className='flex flex-col bg-white border-r border-gray-200 bg-light-gray'>
       <div className='flex flex-col flex-grow'>
@@ -42,5 +42,5 @@ export const Sidebar = () => {
         ))}
       </div>
     </div>
-  )
-}
+  );
+};

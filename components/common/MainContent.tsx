@@ -1,14 +1,14 @@
-import { useTranslation } from 'next-i18next'
-import { ReactNode } from 'react'
+import { useTranslation } from 'next-i18next';
+import { ReactNode } from 'react';
 
 type Props = {
-  title: string
-  subTitle?: string
-  children?: ReactNode
-}
+  title: string;
+  subTitle?: string;
+  children?: ReactNode;
+};
 
 export const MainContent = ({ title, subTitle, children }: Props) => {
-  const { t } = useTranslation()
+  const { t } = useTranslation();
   return (
     <div className='flex flex-col flex-1 p-10 text-gray-100'>
       <div className='flex'>
@@ -17,5 +17,5 @@ export const MainContent = ({ title, subTitle, children }: Props) => {
       </div>
       <div className='flex-1 m-4'>{children}</div>
     </div>
-  )
-}
+  );
+};
