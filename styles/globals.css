@@ -98,3 +98,227 @@
 #__next {
   height: 100%;
 }
+
+/* CUSTOM STYLES -- START */
+
+/* headers */
+
+.header1 {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.header2 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.header3 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.header4 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.header5 {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.header6 {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* text styles */
+
+.btn-text {
+  font-size: 14px;
+}
+
+.text-regular {
+  font-size: 14px;
+}
+
+.text-regular-sm {
+  font-size: 13px;
+}
+
+.text-medium {
+  font-size: 12px;
+}
+
+.text-medium-sm {
+  font-size: 11px;
+}
+
+.text-small {
+  font-size: 10px;
+}
+
+/* colors */
+
+.main-color-orange {
+  color: #ffba00;
+}
+
+.main-color-blue {
+  color: #55c5d9;
+}
+
+.sub-color-red {
+  color: #ff7d58;
+}
+
+.sub-color-green {
+  color: #a5d559;
+}
+
+.sub-color-lavender {
+  color: #869de8;
+}
+
+.color-gray-01 {
+  color: #f7f7f7;
+}
+
+.color-gray-02 {
+  color: #efefef;
+}
+
+.color-gray-03 {
+  color: #e2e2e2;
+}
+
+.color-gray-04 {
+  color: #dedede;
+}
+
+.color-gray-05 {
+  color: #bfbfbf;
+}
+
+.color-gray-06 {
+  color: #969696;
+}
+
+.color-gray-07 {
+  color: #797979;
+}
+
+.color-gray-08 {
+  color: #464646;
+}
+
+/* background colors */
+
+.main-color-orange-background {
+  background-color: #ffba00;
+}
+
+.main-color-blue-background {
+  background-color: #55c5d9;
+}
+
+.sub-color-red-background {
+  background-color: #ff7d58;
+}
+
+.sub-color-green-background {
+  background-color: #a5d559;
+}
+
+.sub-color-lavender-background {
+  background-color: #869de8;
+}
+
+.color-gray-01-background {
+  background-color: #f7f7f7;
+}
+
+.color-gray-02-background {
+  background-color: #efefef;
+}
+
+.color-gray-03-background {
+  background-color: #e2e2e2;
+}
+
+.color-gray-04-background {
+  background-color: #dedede;
+}
+
+.color-gray-05-background {
+  background-color: #bfbfbf;
+}
+
+.color-gray-06-background {
+  background-color: #969696;
+}
+
+.color-gray-07-background {
+  background-color: #797979;
+}
+
+.color-gray-08-background {
+  background-color: #464646;
+}
+
+/* border colors */
+
+.main-color-orange-border {
+  border-color: #ffba00;
+}
+
+.main-color-blue-border {
+  border-color: #55c5d9;
+}
+
+.sub-color-red-border {
+  border-color: #ff7d58;
+}
+
+.sub-color-green-border {
+  border-color: #a5d559;
+}
+
+.sub-color-lavender-border {
+  border-color: #869de8;
+}
+
+.color-gray-01-border {
+  border-color: #f7f7f7;
+}
+
+.color-gray-02-border {
+  border-color: #efefef;
+}
+
+.color-gray-03-border {
+  border-color: #e2e2e2;
+}
+
+.color-gray-04-border {
+  border-color: #dedede;
+}
+
+.color-gray-05-border {
+  border-color: #bfbfbf;
+}
+
+.color-gray-06-border {
+  border-color: #969696;
+}
+
+.color-gray-07-border {
+  border-color: #797979;
+}
+
+.color-gray-08-border {
+  border-color: #464646;
+}
+
+/* CUSTOM STYLES -- END */
