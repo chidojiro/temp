@@ -9,6 +9,8 @@ import {
   CheckboxProps,
   CheckboxGroup,
   CheckboxGroupProps,
+  RadioGroupProps,
+  RadioGroup,
 } from '../fields';
 
 // eslint-disable-next-line no-empty-pattern
@@ -24,6 +26,9 @@ const FormCheckbox = (props: FieldProps & Omit<CheckboxProps, keyof FieldProps>)
 const FormCheckboxGroup = (props: FieldProps & Omit<CheckboxGroupProps, keyof FieldProps>) => (
   <Field {...props} component={CheckboxGroup} />
 );
+const FormRadioGroup = (props: FieldProps & Omit<RadioGroupProps, keyof FieldProps>) => (
+  <Field {...props} component={RadioGroup} />
+);
 const FormErrorMessage = ({ name, ...restProps }: HTMLDivProps & { name: string }) => (
   <p className='text-danger' {...restProps}>
     <ErrorMessage name={name}></ErrorMessage>
@@ -34,4 +39,5 @@ Form.Input = FormInput;
 Form.TextArea = FormTextArea;
 Form.Checkbox = FormCheckbox;
 Form.CheckboxGroup = FormCheckboxGroup;
+Form.RadioGroup = FormRadioGroup;
 Form.ErrorMessage = FormErrorMessage;
