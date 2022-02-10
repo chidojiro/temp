@@ -12,8 +12,8 @@ export const LoginForm = () => {
   const { t } = useTranslation();
   const router = useRouter();
   const schema = yup.object({
-    email: yup.string().required(t('Field is required')).email(t('Email is invalid')),
-    password: yup.string().required(t('Field is required')),
+    email: yup.string().required('Field is required').email('Email is invalid'),
+    password: yup.string().required('Field is required'),
   });
   const methods = useForm({
     mode: 'onTouched',
