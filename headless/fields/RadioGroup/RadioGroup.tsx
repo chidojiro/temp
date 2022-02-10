@@ -27,9 +27,8 @@ export const RadioGroup = (props: Props) => {
   const handleChange = React.useCallback(
     (value: string) => {
       setValue?.(value);
-      onChangeProp?.(value);
     },
-    [onChangeProp, setValue]
+    [setValue]
   );
 
   const providerValue = React.useMemo(() => ({ handleChange, value, groupProps: props }), [handleChange, props, value]);

@@ -40,10 +40,9 @@ export const CheckboxGroup = (props: Props) => {
         newValue = value.filter((value: any) => value !== targetValue);
       }
 
-      onChangeProp?.(newValue);
       setValue(newValue);
     },
-    [onChangeProp, setValue, value]
+    [setValue, value]
   );
 
   const providerValue = React.useMemo(() => ({ handleChange, value }), [handleChange, value]);

@@ -18,17 +18,17 @@ export const useClipboard = (text: string, optionsOrTimeout: number | UseClipboa
   }, [text, copyOptions]);
 
   useEffect(() => {
-    let timeoutId: number | null = null;
+    let timeoutId: NodeJS.Timeout;
 
     if (hasCopied) {
-      timeoutId = window.setTimeout(() => {
+      timeoutId = setTimeout(() => {
         setHasCopied(false);
       }, timeout);
     }
 
     return () => {
       if (timeoutId) {
-        window.clearTimeout(timeoutId);
+        clearTimeout(timeoutId);
       }
     };
   }, [timeout, hasCopied]);
