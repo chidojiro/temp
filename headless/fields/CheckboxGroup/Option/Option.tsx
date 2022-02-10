@@ -13,10 +13,7 @@ export type Props = {
   children?: (state: RenderPropState) => React.ReactNode;
 };
 
-export const Option = (
-  { value, shouldChange: shouldChangeProp, children }: Props,
-  ref: React.ForwardedRef<HTMLInputElement>
-) => {
+export const Option = ({ value, shouldChange: shouldChangeProp, children }: Props) => {
   const groupProviderValue = React.useContext<CheckboxGroupProvider>(CheckboxGroupContext);
 
   const isChecked = groupProviderValue.value.includes(value);
