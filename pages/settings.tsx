@@ -1,11 +1,11 @@
-import { Layout } from '@/components'
+import { Layout } from '@/components';
 
-const Dashboard = () => {
+const Settings = () => {
   return (
     <Layout title='Settings'>
       <div className='flex'>settings</div>
     </Layout>
-  )
-}
+  );
+};
 
-export default Dashboard
+export default Settings;
