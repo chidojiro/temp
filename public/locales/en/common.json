@@ -2,9 +2,5 @@
   "menuDashboard": "Dashboards",
   "menuMarketingAction": "Marketing actions",
   "menuActions": "Marketing actions",
-  "menuSettings": "Settings",
-  "login": "Login",
-  "email": "Email address",
-  "password": "Password",
-  "forgotPassword": "Forgot your password?"
+  "menuSettings": "Settings"
 }

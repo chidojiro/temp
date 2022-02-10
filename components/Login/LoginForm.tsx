@@ -1,19 +1,16 @@
-import { ErrorMessage, Form } from '@/headless/Form';
+import { Form } from '@/components';
 import { useStateToggle } from '@/hooks';
 import { EyeIcon, EyeOffIcon } from '@heroicons/react/outline';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useTranslation } from 'next-i18next';
+import { useRouter } from 'next/router';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
-import { Button } from './common/Button';
-import { Input } from './common/fields';
+import { Button } from '../common/Button';
 
-type Props = {
-  onSubmit: (data: any) => void;
-};
-
-const LoginForm = ({ onSubmit }: Props) => {
+export const LoginForm = () => {
   const { t } = useTranslation();
+  const router = useRouter();
   const schema = yup.object({
     email: yup.string().required(t('Field is required')).email(t('Email is invalid')),
     password: yup.string().required(t('Field is required')),
@@ -24,40 +21,41 @@ const LoginForm = ({ onSubmit }: Props) => {
   });
 
   const {
-    register,
     formState: { errors },
   } = methods;
 
   const [showPwd, toggleShowPwd] = useStateToggle(false);
   const icon = showPwd ? <EyeIcon className='w-5 h-5' /> : <EyeOffIcon className='w-5 h-5' />;
 
+  const onSubmit = () => {
+    router.push('/dashboard');
+  };
+
   return (
     <div className='w-96'>
-      <div className='mb-5 font-bold text-center text-h4 text-dark-gray-1'>{t('login')}</div>
+      <div className='mb-5 font-bold prose text-center text-h4'>{t('login')}</div>
       <Form methods={methods} onSubmit={onSubmit}>
-        <Input
-          {...register('email')}
+        <Form.Input
+          name='email'
           className='w-full mb-2.5'
           htmlType='email'
           placeholder={t('email')}
           error={!!errors?.email?.message}
         />
-        <ErrorMessage name='email' className='mb-3'></ErrorMessage>
-        <Input
-          {...register('password')}
+        <Form.ErrorMessage name='email' className='mb-3'></Form.ErrorMessage>
+        <Form.Input
+          name='password'
           className='w-full mb-5'
           htmlType={showPwd ? 'text' : 'password'}
           placeholder={t('password')}
           innerRight={<div onClick={() => toggleShowPwd()}>{icon}</div>}
         />
-        <ErrorMessage name='password' className='mb-3'></ErrorMessage>
+        <Form.ErrorMessage name='password' className='mb-3'></Form.ErrorMessage>
         <Button type='submit' className='w-full font-bold'>
           {t('login')}
         </Button>
-        <div className='mt-5 text-center underline text-medium text-light-blue'>{t('forgotPassword')}</div>
+        <div className='mt-5 text-center underline text-medium text-primary'>{t('forgotPassword')}</div>
       </Form>
     </div>
   );
 };
-
-export default LoginForm;
