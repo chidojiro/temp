@@ -136,7 +136,8 @@ export const Button = React.forwardRef<HTMLElement, Props>(
             disabled,
           },
           className
-        )}>
+        )}
+      >
         {!!icon && <div className='mr-3'>{icon}</div>}
         {children}
       </button>
