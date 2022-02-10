@@ -9,7 +9,7 @@ import * as yup from 'yup';
 import { Button } from '../common/Button';
 
 export const LoginForm = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation('login');
   const router = useRouter();
   const schema = yup.object({
     email: yup.string().required('Field is required').email('Email is invalid'),
@@ -28,7 +28,7 @@ export const LoginForm = () => {
   };
 
   return (
-    <div className='w-96'>
+    <div className='w-[400px]'>
       <div className='mb-5 font-bold prose text-center text-h4'>{t('login')}</div>
       <Form methods={methods} onSubmit={onSubmit}>
         <Form.Input name='email' className='w-full mb-2.5' htmlType='email' placeholder={t('email')} />

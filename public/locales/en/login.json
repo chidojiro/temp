@@ -2,5 +2,7 @@
   "login": "Login",
   "email": "Email address",
   "password": "Password",
-  "forgotPassword": "Forgot your password?"
+  "forgotPassword": "Forgot your password?",
+  "titleMP": "Givery Marketing Platform",
+  "description": "Integrated customer data management \nand optimal communication based on data \nfor unprecedented maximum marketing effectiveness. (tentative)"
 }
