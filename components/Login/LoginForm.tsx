@@ -20,10 +20,6 @@ export const LoginForm = () => {
     resolver: yupResolver(schema),
   });
 
-  const {
-    formState: { errors },
-  } = methods;
-
   const [showPwd, toggleShowPwd] = useStateToggle(false);
   const icon = showPwd ? <EyeIcon className='w-5 h-5' /> : <EyeOffIcon className='w-5 h-5' />;
 
@@ -35,13 +31,7 @@ export const LoginForm = () => {
     <div className='w-96'>
       <div className='mb-5 font-bold prose text-center text-h4'>{t('login')}</div>
       <Form methods={methods} onSubmit={onSubmit}>
-        <Form.Input
-          name='email'
-          className='w-full mb-2.5'
-          htmlType='email'
-          placeholder={t('email')}
-          error={!!errors?.email?.message}
-        />
+        <Form.Input name='email' className='w-full mb-2.5' htmlType='email' placeholder={t('email')} />
         <Form.ErrorMessage name='email' className='mb-3'></Form.ErrorMessage>
         <Form.Input
           name='password'
