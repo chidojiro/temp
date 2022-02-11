@@ -8,7 +8,7 @@ const Login = () => {
       <div className='flex items-center justify-center'>
         <div className='font-bold text-h1 text-secondary'>MARKETING PLATFORM</div>
       </div>
-      <div className='flex items-center justify-center bg-light-gray'>
+      <div className='flex items-center justify-center bg-gray-light'>
         <LoginForm />
       </div>
     </div>
