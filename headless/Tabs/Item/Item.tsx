@@ -31,5 +31,5 @@ export const Item = ({ children, content, value }: Props) => {
     }
   }, [content, isActive, setContent, index]);
 
-  return <div>{children({ onClick, isActive })}</div>;
+  return <>{children({ onClick, isActive })}</>;
 };
