@@ -322,3 +322,11 @@
 }
 
 /* CUSTOM STYLES -- END */
+
+.mp-table-head .mp-table-cell {
+  border-color: theme('colors.secondary.500');
+}
+
+.mp-table-head .mp-table-cell:not(:last-of-type) {
+  border-right-color: theme('colors.white');
+}
