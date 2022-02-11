@@ -27,15 +27,14 @@ export const Sidebar = () => {
     },
   ];
   return (
-    <div className='flex flex-col bg-white border-r border-gray-600 bg-light-gray'>
+    <div className='flex flex-col bg-white border-r border-gray-300 bg-light-gray'>
       <div className='flex flex-col flex-grow'>
         {menu.map(menuItem => (
           <Link key={menuItem.label} href={menuItem.path}>
             <a
               className={classNames('flex text-medium items-center px-6 py-2.5 hover:bg-dark-gray', {
                 'bg-dark-gray': menuItem.path === router.pathname,
-              })}
-            >
+              })}>
               <ChartBarIcon className='w-4 h-4 mr-2 text-primary' />
               {menuItem.label}
             </a>
