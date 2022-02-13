@@ -5,9 +5,9 @@ import am4themes_animated from "@amcharts/amcharts4/themes/animated"
 
 am4core.useTheme(am4themes_animated)
 
-const Chart = () => {
+const XYChart = () => {
     useLayoutEffect(() => {
-        let chart = am4core.create('chartdiv', am4charts.XYChart)
+      const chart = am4core.create('chartdiv', am4charts.XYChart)
         chart.colors.step = 2
         
         chart.legend = new am4charts.Legend()
@@ -17,18 +17,18 @@ const Chart = () => {
         chart.legend.markers.template.height = 15
         chart.legend.paddingRight = 1330
         
-        let xAxis = chart.xAxes.push(new am4charts.CategoryAxis())
+        const xAxis = chart.xAxes.push(new am4charts.CategoryAxis())
         xAxis.dataFields.category = 'year'
         xAxis.renderer.cellStartLocation = 0.2
         xAxis.renderer.cellEndLocation = 0.8
         xAxis.renderer.grid.template.location = 0
         xAxis.renderer.grid.template.disabled = true
         
-        let yAxis = chart.yAxes.push(new am4charts.ValueAxis())
+        const yAxis = chart.yAxes.push(new am4charts.ValueAxis())
         yAxis.min = 0
         yAxis.extraMax = 0.1
 
-        let lineYAxis = chart.yAxes.push(new am4charts.ValueAxis())
+        const lineYAxis = chart.yAxes.push(new am4charts.ValueAxis())
         lineYAxis.renderer.opposite = true
         lineYAxis.min = 0
         lineYAxis.max = 100
@@ -137,7 +137,7 @@ const Chart = () => {
         createSeries("F1","#FFBA00")
         createSeries('F2', '#55C5D9')
 
-        let lineSeries = chart.series.push(new am4charts.LineSeries())
+        const lineSeries = chart.series.push(new am4charts.LineSeries())
         lineSeries.name = "F2転換率"
         lineSeries.dataFields.valueY = "F2_conversion_rate"
         lineSeries.dataFields.categoryX = "year"
@@ -145,7 +145,7 @@ const Chart = () => {
         lineSeries.stroke = am4core.color("#FF7D58")
         lineSeries.strokeWidth = 2
 
-        let bullet = lineSeries.bullets.push(new am4charts.LabelBullet())
+        const bullet = lineSeries.bullets.push(new am4charts.LabelBullet())
         bullet.interactionsEnabled = false
         bullet.dy = -10
         bullet.label.text = "{values.valueY.workingValue}%"
@@ -155,4 +155,4 @@ const Chart = () => {
       <div id="chartdiv" style={{ width: "100%", height: "500px" }}></div>
     )
 }
-export default Chart
+export default XYChart

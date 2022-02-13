@@ -2,7 +2,7 @@ import { Layout } from '@/components';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import dynamic from 'next/dynamic'
 
-const DynamicComponent = dynamic(() => import('@/ui/components/chart'), {
+const DynamicComponent = dynamic(() => import('@/components/common/Chart/XYChart'), {
   ssr: false
 })
 
