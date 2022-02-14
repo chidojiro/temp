@@ -63,7 +63,7 @@ const ConversionRateChart = ({ firstColumn, secondColumn, lineChart, data }: Con
       })
 
       const createSeries = (name: string, title: string, color: string) => {
-          let series = chart.series.push(new am4charts.ColumnSeries())
+          const series = chart.series.push(new am4charts.ColumnSeries())
           
           series.dataFields.valueY = name
           series.dataFields.categoryX = categoryField
@@ -75,7 +75,7 @@ const ConversionRateChart = ({ firstColumn, secondColumn, lineChart, data }: Con
           series.columns.template.column.cornerRadiusTopRight = 5
           series.columns.template.column.cornerRadiusTopLeft = 5
       
-          let bullet = series.bullets.push(new am4charts.LabelBullet())
+          const bullet = series.bullets.push(new am4charts.LabelBullet())
           bullet.interactionsEnabled = false
           bullet.dy = -10
           bullet.label.text = "{values.valueY.workingValue}"
