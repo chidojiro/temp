@@ -10,8 +10,8 @@ function Dashboard() {
   return (
     <Layout title='menuDashboard'>
       <div className='flex'>dashboard</div>
-      {/* <DynamicComponent firstColumn={{name:"f1_uu", title: "F1"}} secondColumn={{name:"f2_uu", title: "F2"}}
-      lineChart={{name:"f2_conversion_rate", title: "F2 conversion rate"}}/> */}
+      {/* <DynamicComponent firstColumn={{name:"f1_uu", title: "F1", color: "#ffba00"}} secondColumn={{name:"f2_uu", title: "F2", color: "#55c5d9"}}
+      lineChart={{name:"f2_conversion_rate", title: "F2 conversion rate", color: "#ff7d58"}}/> */}
     </Layout>
   );
 }

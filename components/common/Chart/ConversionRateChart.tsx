@@ -5,7 +5,6 @@ import * as am4charts from "@amcharts/amcharts4/charts"
 import am4themes_animated from "@amcharts/amcharts4/themes/animated"
 import { ConversionRateAPI } from '@/apis'
 import { ConversionRate } from '@/types'
-import palette from '@/tailwind.config'
 
 am4core.useTheme(am4themes_animated)
 
@@ -18,6 +17,7 @@ export type ConversionRateChartProps = {
 export type ChartInfo = {
   name: string
   title: string
+  color: string
 }
 
 const ConversionRateChart = ({ firstColumn, secondColumn, lineChart }: ConversionRateChartProps) => {
@@ -102,15 +102,15 @@ const ConversionRateChart = ({ firstColumn, secondColumn, lineChart }: Conversio
         return series
     }
     
-    createSeries(firstColumn.name, palette.theme.extend.colors.secondary.DEFAULT)
-    createSeries(secondColumn.name, palette.theme.extend.colors.primary.DEFAULT)
+    createSeries(firstColumn.name, firstColumn.color)
+    createSeries(secondColumn.name, secondColumn.color)
 
     const lineSeries = chart.series.push(new am4charts.LineSeries())
     lineSeries.name = lineChart.title
     lineSeries.dataFields.valueY = lineChart.name
     lineSeries.dataFields.categoryX = categoryField
     lineSeries.yAxis = lineYAxis
-    lineSeries.stroke = am4core.color(palette.theme.extend.colors.orange.DEFAULT)
+    lineSeries.stroke = am4core.color(lineChart.color)
     lineSeries.strokeWidth = 2
 
     const bullet = lineSeries.bullets.push(new am4charts.LabelBullet())
