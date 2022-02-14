@@ -1,9 +1,9 @@
 import { NavItemInfo } from '@/types/navbar';
-import { ChartBarIcon } from '@heroicons/react/solid';
 import classNames from 'classnames';
 import { useTranslation } from 'next-i18next';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { Icon } from '../icons';
 
 export const Sidebar = () => {
   const { t } = useTranslation();
@@ -35,7 +35,7 @@ export const Sidebar = () => {
               className={classNames('flex text-medium items-center px-6 py-2.5 hover:bg-dark-gray', {
                 'bg-dark-gray': menuItem.path === router.pathname,
               })}>
-              <ChartBarIcon className='w-4 h-4 mr-2 text-primary' />
+              <Icon name='group' className='w-4 h-4 mr-2 text-primary' />
               {menuItem.label}
             </a>
           </Link>
