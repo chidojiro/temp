@@ -1,4 +1,5 @@
 import { appWithTranslation } from 'next-i18next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 import React from 'react';
@@ -16,5 +17,4 @@ function CustomApp({ Component, pageProps }: AppProps) {
     </>
   );
 }
-
 export default appWithTranslation(CustomApp);
