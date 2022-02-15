@@ -10,7 +10,6 @@ export type Props<T = any> = {
   className?: string;
   onChange?: (e: any) => void;
   onBlur?: (e: any) => void;
-  defaultValue?: any;
   value?: any;
   emptyValue?: any;
   defaultChecked?: boolean;
@@ -24,7 +23,6 @@ export const Field = <T,>({
   rules,
   onChange: onChangeProp,
   onBlur: onBlurProp,
-  defaultValue,
   className,
   value: valueProp,
   errorGroup = [],
@@ -48,8 +46,8 @@ export const Field = <T,>({
   } = useController({ name, rules });
 
   React.useEffect(() => {
-    if ((defaultValue || emptyValue) && !value) {
-      setValue(name, defaultValue || emptyValue, { shouldDirty: false });
+    if (emptyValue && !value) {
+      setValue(name, emptyValue, { shouldDirty: false });
     }
 
     if (defaultChecked) {

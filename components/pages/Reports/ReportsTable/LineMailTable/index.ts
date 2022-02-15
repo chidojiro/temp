@@ -1,0 +1,1 @@
+export { LineMailTable } from './LineMailTable';

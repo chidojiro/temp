@@ -1,6 +1,5 @@
 import { LoginForm } from '@/components';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { useRouter } from 'next/router';
 
 const Login = () => {
   return (
@@ -17,7 +16,7 @@ const Login = () => {
 
 export const getStaticProps = async ({ locale }: any) => ({
   props: {
-    ...(await serverSideTranslations(locale)),
+    ...(await serverSideTranslations(locale, ['common', 'login'])),
   },
 });
 

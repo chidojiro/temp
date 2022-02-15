@@ -158,7 +158,12 @@ module.exports = {
         danger: palette.orange.DEFAULT,
         warning: palette.yellow.DEFAULT,
         sleepy: palette.sleepy.DEFAULT,
-        gray: { ...palette.gray, DEFAULT: palette.gray[400], light: palette.gray[100], dark: palette.gray[800] },
+        gray: {
+          ...palette.gray,
+          DEFAULT: palette.gray[400],
+          light: palette.gray[100],
+          dark: palette.gray[800],
+        },
         input: { DEFAULT: palette.gray[600], focus: palette.gray[400] },
         'dark-gray': '#E6E6E6',
       },

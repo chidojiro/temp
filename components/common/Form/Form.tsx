@@ -16,7 +16,9 @@ import {
 // eslint-disable-next-line no-empty-pattern
 export const Form = (props: FormProps) => <HeadlessForm {...props} />;
 
-const FormInput = (props: FieldProps & Omit<InputProps, keyof FieldProps>) => <Field {...props} component={Input} />;
+const FormInput = (props: FieldProps & Omit<InputProps, keyof FieldProps>) => (
+  <Field {...props} component={Input} />
+);
 const FormTextArea = (props: FieldProps & Omit<TextAreaProps, keyof FieldProps>) => (
   <Field {...props} component={TextArea} />
 );

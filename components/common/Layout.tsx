@@ -11,9 +11,9 @@ type Props = {
 
 export const Layout = ({ title, subTitle, children }: Props) => {
   return (
-    <div className='flex flex-col w-full h-full'>
+    <div className='flex flex-col min-h-screen'>
       <Header />
-      <div className='flex h-full'>
+      <div className='flex flex-1'>
         <Sidebar />
         <MainContent title={title} subTitle={subTitle}>
           {children}

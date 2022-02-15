@@ -3,6 +3,7 @@ import {
   CheckboxGroupOptionProps,
   CheckboxGroupProps as HeadlessCheckboxGroupProps,
 } from '@/headless';
+import React from 'react';
 import { Checkbox, CheckboxProps } from '../Checkbox';
 
 // eslint-disable-next-line @typescript-eslint/ban-types
@@ -29,8 +30,15 @@ const Option = ({ children, value, shouldChange, ...restProps }: OptionProps) =>
 export type Props = HeadlessCheckboxGroupProps & {};
 
 // eslint-disable-next-line no-empty-pattern
-export const CheckboxGroup = ({ ...restProps }: Props) => {
-  return <HeadlessCheckboxGroup {...restProps} />;
-};
+const CheckboxGroup_ = React.forwardRef<any, Props>(({ children, ...restProps }, ref) => {
+  return (
+    <HeadlessCheckboxGroup {...restProps}>
+      {children}
+      <input className='minimized' ref={ref} />
+    </HeadlessCheckboxGroup>
+  );
+});
 
-CheckboxGroup.Option = Option;
+CheckboxGroup_.displayName = 'CheckboxGroup';
+(CheckboxGroup_ as any).Option = Option;
+export const CheckboxGroup = CheckboxGroup_ as typeof CheckboxGroup_ & { Option: typeof Option };
