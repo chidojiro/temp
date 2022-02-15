@@ -3,6 +3,7 @@ import {
   RadioGroupOptionProps,
   RadioGroupProps as HeadlessRadioGroupProps,
 } from '@/headless';
+import React from 'react';
 import { Radio, RadioProps } from '../Radio';
 
 // eslint-disable-next-line @typescript-eslint/ban-types
@@ -29,8 +30,16 @@ const Option = ({ children, value, shouldChange, ...restProps }: OptionProps) =>
 export type Props = HeadlessRadioGroupProps & {};
 
 // eslint-disable-next-line no-empty-pattern
-export const RadioGroup = ({ ...restProps }: Props) => {
-  return <HeadlessRadioGroup {...restProps} />;
-};
+const RadioGroup_ = React.forwardRef<any, Props>(({ children, ...restProps }, ref) => {
+  return (
+    <HeadlessRadioGroup {...restProps}>
+      <input className='minimized' ref={ref} />
+      {children}
+    </HeadlessRadioGroup>
+  );
+});
 
-RadioGroup.Option = Option;
+RadioGroup_.displayName = 'RadioGroup';
+(RadioGroup_ as any).Option = Option;
+
+export const RadioGroup = RadioGroup_ as typeof RadioGroup_ & { Option: typeof Option };

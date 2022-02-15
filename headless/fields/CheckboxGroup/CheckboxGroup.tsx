@@ -47,7 +47,9 @@ export const CheckboxGroup = (props: Props) => {
 
   const providerValue = React.useMemo(() => ({ handleChange, value }), [handleChange, value]);
 
-  return <CheckboxGroupContext.Provider value={providerValue}>{children}</CheckboxGroupContext.Provider>;
+  return (
+    <CheckboxGroupContext.Provider value={providerValue}>{children}</CheckboxGroupContext.Provider>
+  );
 };
 
 CheckboxGroup.Option = Option;

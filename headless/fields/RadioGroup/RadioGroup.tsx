@@ -22,7 +22,11 @@ export const RadioGroupContext = React.createContext<RadioGroupProvider>({
 
 export const RadioGroup = (props: Props) => {
   const { value: valueProp, onChange: onChangeProp, defaultValue, children } = props;
-  const [value, setValue] = useControllable({ value: valueProp, onChange: onChangeProp, defaultValue });
+  const [value, setValue] = useControllable({
+    value: valueProp,
+    onChange: onChangeProp,
+    defaultValue,
+  });
 
   const handleChange = React.useCallback(
     (value: string) => {
@@ -31,7 +35,10 @@ export const RadioGroup = (props: Props) => {
     [setValue]
   );
 
-  const providerValue = React.useMemo(() => ({ handleChange, value, groupProps: props }), [handleChange, props, value]);
+  const providerValue = React.useMemo(
+    () => ({ handleChange, value, groupProps: props }),
+    [handleChange, props, value]
+  );
 
   return <RadioGroupContext.Provider value={providerValue}>{children}</RadioGroupContext.Provider>;
 };

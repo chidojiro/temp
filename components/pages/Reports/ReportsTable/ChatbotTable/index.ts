@@ -1,0 +1,1 @@
+export { ChatbotTable } from './ChatbotTable';

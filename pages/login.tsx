@@ -7,7 +7,7 @@ const LoginPage = () => {
 
 export const getStaticProps = async ({ locale }: any) => ({
   props: {
-    ...(await serverSideTranslations(locale)),
+    ...(await serverSideTranslations(locale, ['common', 'login'])),
   },
 });
 
