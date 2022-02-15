@@ -24,5 +24,8 @@ export const useVisibilityControl = () => {
     });
   }, []);
 
-  return React.useMemo<Control>(() => ({ open, close, visible: isActive, toggle }), [open, close, isActive, toggle]);
+  return React.useMemo<Control>(
+    () => ({ open, close, visible: isActive, toggle }),
+    [open, close, isActive, toggle]
+  );
 };

@@ -41,14 +41,22 @@ const renderDefault = (props?: Partial<UsePaginationProps>) =>
   );
 
 it('should render only one page item', () => {
-  const { result } = renderHook(() => usePagination({ totalRecord: 0, centerItemsCount: 10, sideItemsCount: 10 }));
+  const { result } = renderHook(() =>
+    usePagination({ totalRecord: 0, centerItemsCount: 10, sideItemsCount: 10 })
+  );
 
   const items = result.current.items;
 
   expect(items).toHaveLength(3);
-  expect(items[0]).toEqual(expect.objectContaining({ disabled: true, type: 'previous', selected: false }));
-  expect(items[1]).toEqual(expect.objectContaining({ disabled: false, type: 'page', page: 1, selected: true }));
-  expect(items[2]).toEqual(expect.objectContaining({ disabled: true, type: 'next', selected: false }));
+  expect(items[0]).toEqual(
+    expect.objectContaining({ disabled: true, type: 'previous', selected: false })
+  );
+  expect(items[1]).toEqual(
+    expect.objectContaining({ disabled: false, type: 'page', page: 1, selected: true })
+  );
+  expect(items[2]).toEqual(
+    expect.objectContaining({ disabled: true, type: 'next', selected: false })
+  );
 });
 
 it('should show correct number of items on each end', () => {
@@ -59,15 +67,33 @@ it('should show correct number of items on each end', () => {
   let items = result.current.items;
 
   expect(items).toHaveLength(9);
-  expect(items[0]).toEqual(expect.objectContaining({ disabled: true, type: 'previous', selected: false }));
-  expect(items[1]).toEqual(expect.objectContaining({ disabled: false, type: 'page', page: 1, selected: true }));
-  expect(items[2]).toEqual(expect.objectContaining({ disabled: false, type: 'page', page: 2, selected: false }));
-  expect(items[3]).toEqual(expect.objectContaining({ disabled: false, type: 'page', page: 3, selected: false }));
-  expect(items[4]).toEqual(expect.objectContaining({ disabled: false, type: 'page', page: 4, selected: false }));
-  expect(items[5]).toEqual(expect.objectContaining({ disabled: false, type: 'page', page: 5, selected: false }));
-  expect(items[6]).toEqual(expect.objectContaining({ disabled: false, type: 'ellipsis', selected: false }));
-  expect(items[7]).toEqual(expect.objectContaining({ disabled: false, type: 'page', page: 10, selected: false }));
-  expect(items[8]).toEqual(expect.objectContaining({ disabled: false, type: 'next', selected: false }));
+  expect(items[0]).toEqual(
+    expect.objectContaining({ disabled: true, type: 'previous', selected: false })
+  );
+  expect(items[1]).toEqual(
+    expect.objectContaining({ disabled: false, type: 'page', page: 1, selected: true })
+  );
+  expect(items[2]).toEqual(
+    expect.objectContaining({ disabled: false, type: 'page', page: 2, selected: false })
+  );
+  expect(items[3]).toEqual(
+    expect.objectContaining({ disabled: false, type: 'page', page: 3, selected: false })
+  );
+  expect(items[4]).toEqual(
+    expect.objectContaining({ disabled: false, type: 'page', page: 4, selected: false })
+  );
+  expect(items[5]).toEqual(
+    expect.objectContaining({ disabled: false, type: 'page', page: 5, selected: false })
+  );
+  expect(items[6]).toEqual(
+    expect.objectContaining({ disabled: false, type: 'ellipsis', selected: false })
+  );
+  expect(items[7]).toEqual(
+    expect.objectContaining({ disabled: false, type: 'page', page: 10, selected: false })
+  );
+  expect(items[8]).toEqual(
+    expect.objectContaining({ disabled: false, type: 'next', selected: false })
+  );
 
   act(() => {
     result.current.items[items.length - 2].onClick?.();
@@ -76,15 +102,33 @@ it('should show correct number of items on each end', () => {
   items = result.current.items;
 
   expect(items).toHaveLength(9);
-  expect(items[0]).toEqual(expect.objectContaining({ disabled: false, type: 'previous', selected: false }));
-  expect(items[1]).toEqual(expect.objectContaining({ disabled: false, type: 'page', page: 1, selected: false }));
-  expect(items[2]).toEqual(expect.objectContaining({ disabled: false, type: 'ellipsis', selected: false }));
-  expect(items[3]).toEqual(expect.objectContaining({ disabled: false, type: 'page', page: 6, selected: false }));
-  expect(items[4]).toEqual(expect.objectContaining({ disabled: false, type: 'page', page: 7, selected: false }));
-  expect(items[5]).toEqual(expect.objectContaining({ disabled: false, type: 'page', page: 8, selected: false }));
-  expect(items[6]).toEqual(expect.objectContaining({ disabled: false, type: 'page', page: 9, selected: false }));
-  expect(items[7]).toEqual(expect.objectContaining({ disabled: false, type: 'page', page: 10, selected: true }));
-  expect(items[8]).toEqual(expect.objectContaining({ disabled: true, type: 'next', selected: false }));
+  expect(items[0]).toEqual(
+    expect.objectContaining({ disabled: false, type: 'previous', selected: false })
+  );
+  expect(items[1]).toEqual(
+    expect.objectContaining({ disabled: false, type: 'page', page: 1, selected: false })
+  );
+  expect(items[2]).toEqual(
+    expect.objectContaining({ disabled: false, type: 'ellipsis', selected: false })
+  );
+  expect(items[3]).toEqual(
+    expect.objectContaining({ disabled: false, type: 'page', page: 6, selected: false })
+  );
+  expect(items[4]).toEqual(
+    expect.objectContaining({ disabled: false, type: 'page', page: 7, selected: false })
+  );
+  expect(items[5]).toEqual(
+    expect.objectContaining({ disabled: false, type: 'page', page: 8, selected: false })
+  );
+  expect(items[6]).toEqual(
+    expect.objectContaining({ disabled: false, type: 'page', page: 9, selected: false })
+  );
+  expect(items[7]).toEqual(
+    expect.objectContaining({ disabled: false, type: 'page', page: 10, selected: true })
+  );
+  expect(items[8]).toEqual(
+    expect.objectContaining({ disabled: true, type: 'next', selected: false })
+  );
 });
 
 it('should navigate correctly', () => {
@@ -141,15 +185,33 @@ it('should show items correctly when page is center', () => {
   const items = result.current.items;
 
   expect(items).toHaveLength(9);
-  expect(items[0]).toEqual(expect.objectContaining({ disabled: false, type: 'previous', selected: false }));
-  expect(items[1]).toEqual(expect.objectContaining({ disabled: false, type: 'page', page: 1, selected: false }));
-  expect(items[2]).toEqual(expect.objectContaining({ disabled: false, type: 'ellipsis', selected: false }));
-  expect(items[3]).toEqual(expect.objectContaining({ disabled: false, type: 'page', page: 4, selected: false }));
-  expect(items[4]).toEqual(expect.objectContaining({ disabled: false, type: 'page', page: 5, selected: true }));
-  expect(items[5]).toEqual(expect.objectContaining({ disabled: false, type: 'page', page: 6, selected: false }));
-  expect(items[6]).toEqual(expect.objectContaining({ disabled: false, type: 'ellipsis', selected: false }));
-  expect(items[7]).toEqual(expect.objectContaining({ disabled: false, type: 'page', page: 10, selected: false }));
-  expect(items[8]).toEqual(expect.objectContaining({ disabled: false, type: 'next', selected: false }));
+  expect(items[0]).toEqual(
+    expect.objectContaining({ disabled: false, type: 'previous', selected: false })
+  );
+  expect(items[1]).toEqual(
+    expect.objectContaining({ disabled: false, type: 'page', page: 1, selected: false })
+  );
+  expect(items[2]).toEqual(
+    expect.objectContaining({ disabled: false, type: 'ellipsis', selected: false })
+  );
+  expect(items[3]).toEqual(
+    expect.objectContaining({ disabled: false, type: 'page', page: 4, selected: false })
+  );
+  expect(items[4]).toEqual(
+    expect.objectContaining({ disabled: false, type: 'page', page: 5, selected: true })
+  );
+  expect(items[5]).toEqual(
+    expect.objectContaining({ disabled: false, type: 'page', page: 6, selected: false })
+  );
+  expect(items[6]).toEqual(
+    expect.objectContaining({ disabled: false, type: 'ellipsis', selected: false })
+  );
+  expect(items[7]).toEqual(
+    expect.objectContaining({ disabled: false, type: 'page', page: 10, selected: false })
+  );
+  expect(items[8]).toEqual(
+    expect.objectContaining({ disabled: false, type: 'next', selected: false })
+  );
 });
 
 it.each([
@@ -185,13 +247,21 @@ it('should disable item next', () => {
 it('should return showing range', () => {
   const { result } = renderDefault({ page: 5 });
 
-  expect(result.current.showingRange).toEqual({ from: 41, to: 50, total: 100 } as ShowingPaginationRange);
+  expect(result.current.showingRange).toEqual({
+    from: 41,
+    to: 50,
+    total: 100,
+  } as ShowingPaginationRange);
 });
 
 it('should return showing range starting with 0', () => {
   const { result } = renderDefault({ totalRecord: 0 });
 
-  expect(result.current.showingRange).toEqual({ from: 0, to: 0, total: 0 } as ShowingPaginationRange);
+  expect(result.current.showingRange).toEqual({
+    from: 0,
+    to: 0,
+    total: 0,
+  } as ShowingPaginationRange);
 });
 
 it('should throw invalid prop perPage', () => {

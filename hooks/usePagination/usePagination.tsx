@@ -68,7 +68,8 @@ export const usePagination = ({
 
     if (page < sideItemsCount) return numberToRange(sideItemsCount);
 
-    if (page > totalPage - sideItemsCount + 1) return numberToRange(sideItemsCount, totalPage - sideItemsCount);
+    if (page > totalPage - sideItemsCount + 1)
+      return numberToRange(sideItemsCount, totalPage - sideItemsCount);
 
     return numberToRange(totalPage);
   };

@@ -13,7 +13,10 @@ type Size = 'sm' | 'md';
 const DEFAULT_SIZE: Size = 'md';
 
 // eslint-disable-next-line @typescript-eslint/ban-types
-export type Props = React.DetailedHTMLProps<React.TableHTMLAttributes<HTMLTableElement>, HTMLTableElement> & {
+export type Props = React.DetailedHTMLProps<
+  React.TableHTMLAttributes<HTMLTableElement>,
+  HTMLTableElement
+> & {
   size?: Size;
 };
 
@@ -28,7 +31,9 @@ export const Table = ({ className, size = DEFAULT_SIZE, ...restProps }: Props) =
 
   return (
     <TableContext.Provider value={providerValue}>
-      <table {...restProps} className={classNames('mp-table', 'w-full border-collapse table-auto', className)}></table>
+      <table
+        {...restProps}
+        className={classNames('mp-table', 'w-full border-collapse table-auto', className)}></table>
     </TableContext.Provider>
   );
 };

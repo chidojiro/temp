@@ -11,7 +11,13 @@ const renderRadioGroup = (props?: Partial<RadioGroupProps>) =>
         <RadioGroup.Option value='1'>
           {({ handleChange, isChecked, value }) => (
             <label>
-              <input data-testid='option 1' type='radio' value={value} checked={isChecked} onChange={handleChange} />
+              <input
+                data-testid='option 1'
+                type='radio'
+                value={value}
+                checked={isChecked}
+                onChange={handleChange}
+              />
               Option 1
             </label>
           )}
@@ -19,7 +25,13 @@ const renderRadioGroup = (props?: Partial<RadioGroupProps>) =>
         <RadioGroup.Option value='2'>
           {({ handleChange, isChecked, value }) => (
             <label>
-              <input data-testid='option 2' type='radio' checked={isChecked} value={value} onChange={handleChange} />
+              <input
+                data-testid='option 2'
+                type='radio'
+                checked={isChecked}
+                value={value}
+                onChange={handleChange}
+              />
               Option 2
             </label>
           )}
@@ -27,7 +39,13 @@ const renderRadioGroup = (props?: Partial<RadioGroupProps>) =>
         <RadioGroup.Option value='3'>
           {({ handleChange, isChecked, value }) => (
             <label>
-              <input data-testid='option 3' type='radio' checked={isChecked} value={value} onChange={handleChange} />
+              <input
+                data-testid='option 3'
+                type='radio'
+                checked={isChecked}
+                value={value}
+                onChange={handleChange}
+              />
               Option 3
             </label>
           )}

@@ -15,7 +15,15 @@ const activeBackgrounds: { [key in ColorScheme]: string } = {
 // eslint-disable-next-line no-empty-pattern
 export const Checkbox = React.forwardRef<HTMLInputElement, Props>(
   (
-    { checked: checkedProp, onChange, className, label, defaultChecked, colorScheme = 'primary', ...restProps }: Props,
+    {
+      checked: checkedProp,
+      onChange,
+      className,
+      label,
+      defaultChecked,
+      colorScheme = 'primary',
+      ...restProps
+    }: Props,
     ref: any
   ) => {
     const [checkedState, setCheckedState] = React.useState(checkedProp ?? defaultChecked);
@@ -30,12 +38,19 @@ export const Checkbox = React.forwardRef<HTMLInputElement, Props>(
     const activeBackground = activeBackgrounds[colorScheme];
 
     return (
-      <label className={classNames('mp-checkbox', 'flex items-center', className)} role='switch' aria-checked={checked}>
+      <label
+        className={classNames('mp-checkbox', 'flex items-center', className)}
+        role='switch'
+        aria-checked={checked}>
         <div
-          className={classNames('w-4 h-4', 'border border-solid border-input focus:border-input-focus rounded-sm', {
-            'bg-white': !checked,
-            [`${activeBackground} border-none`]: checked,
-          })}></div>
+          className={classNames(
+            'w-4 h-4',
+            'border border-solid border-input focus:border-input-focus rounded-sm',
+            {
+              'bg-white': !checked,
+              [`${activeBackground} border-none`]: checked,
+            }
+          )}></div>
         <input
           className='minimized'
           type='checkbox'

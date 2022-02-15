@@ -11,7 +11,8 @@ const isArray = ldIsArray;
 const isNull = ldIsNull;
 const isUndefined = ldIsUndefined;
 
-const isNullOrUndefined = (value: any): value is undefined | null => isNull(value) || isUndefined(value);
+const isNullOrUndefined = (value: any): value is undefined | null =>
+  isNull(value) || isUndefined(value);
 
 const isFunction = ldIsFunction;
 

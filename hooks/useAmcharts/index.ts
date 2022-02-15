@@ -1,1 +1,1 @@
-export { useAmcharts } from "./useAmcharts"
+export { useAmcharts } from './useAmcharts';

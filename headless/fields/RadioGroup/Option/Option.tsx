@@ -9,7 +9,10 @@ type RenderPropState = {
 
 export type Props = {
   value: string;
-  shouldChange?: (e: ChangeEvent<HTMLInputElement>, checkboxGroupValue?: string) => boolean | Promise<boolean>;
+  shouldChange?: (
+    e: ChangeEvent<HTMLInputElement>,
+    checkboxGroupValue?: string
+  ) => boolean | Promise<boolean>;
   children?: (state: RenderPropState) => React.ReactNode;
 };
 
