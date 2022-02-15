@@ -1,7 +1,10 @@
 import classNames from 'classnames';
 import React from 'react';
 
-export type Props = React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> & {
+export type Props = React.DetailedHTMLProps<
+  React.HTMLAttributes<HTMLDivElement>,
+  HTMLDivElement
+> & {
   children?: React.ReactNode;
   ratio: `${number}-${number}`;
   className?: string;

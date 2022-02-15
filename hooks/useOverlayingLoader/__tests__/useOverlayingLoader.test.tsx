@@ -5,7 +5,11 @@ import { useOverlayingLoader } from '..';
 
 it('should show overlaying loader', () => {
   renderHook(() =>
-    useOverlayingLoader({ active: true, host: document.body, component: <div data-testid='overloading-loader'></div> })
+    useOverlayingLoader({
+      active: true,
+      host: document.body,
+      component: <div data-testid='overloading-loader'></div>,
+    })
   );
 
   expect(screen.queryByTestId('overloading-loader')).toBeInTheDocument();
@@ -13,7 +17,11 @@ it('should show overlaying loader', () => {
 
 it('should not show overlaying loader', () => {
   renderHook(() =>
-    useOverlayingLoader({ active: false, host: document.body, component: <div data-testid='overloading-loader'></div> })
+    useOverlayingLoader({
+      active: false,
+      host: document.body,
+      component: <div data-testid='overloading-loader'></div>,
+    })
   );
 
   expect(screen.queryByTestId('overloading-loader')).not.toBeInTheDocument();

@@ -2,7 +2,11 @@ import React from 'react';
 import { AssertUtils } from '../../utils';
 
 export const useOnClickOutside = (
-  refsOrElements: Element | React.RefObject<Element> | null | (Element | React.RefObject<Element> | null)[],
+  refsOrElements:
+    | Element
+    | React.RefObject<Element>
+    | null
+    | (Element | React.RefObject<Element> | null)[],
   handler: (event: MouseEvent) => void
 ) => {
   const handleClick = (e: MouseEvent) => {

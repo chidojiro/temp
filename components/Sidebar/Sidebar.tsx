@@ -32,9 +32,13 @@ export const Sidebar = () => {
         {menu.map(menuItem => (
           <Link key={menuItem.label} href={menuItem.path}>
             <a
-              className={classNames('flex text-medium items-center px-6 py-2.5 hover:bg-dark-gray', {
-                'bg-dark-gray': menuItem.path === router.pathname,
-              })}>
+              className={classNames(
+                'flex text-medium items-center px-6 py-2.5 hover:bg-dark-gray',
+                {
+                  'bg-dark-gray': menuItem.path === router.pathname,
+                }
+              )}
+            >
               <Icon name='group' className='w-4 h-4 mr-2 text-primary' />
               {menuItem.label}
             </a>

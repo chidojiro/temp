@@ -28,8 +28,7 @@ const Template: ComponentStory<any> = ({}: any) => {
                   </Notification>
                 ) : null,
             })
-          }
-        >
+          }>
           top-left
         </button>
         <button
@@ -38,12 +37,13 @@ const Template: ComponentStory<any> = ({}: any) => {
               render: ({ open }) =>
                 open ? (
                   <Notification>
-                    <div className='border border-gray-200 border-solid'>Top Center Notification</div>
+                    <div className='border border-gray-200 border-solid'>
+                      Top Center Notification
+                    </div>
                   </Notification>
                 ) : null,
             })
-          }
-        >
+          }>
           top-center
         </button>
         <button
@@ -52,12 +52,13 @@ const Template: ComponentStory<any> = ({}: any) => {
               render: ({ open }) =>
                 open ? (
                   <Notification>
-                    <div className='border border-gray-200 border-solid'>Top Right Notification</div>
+                    <div className='border border-gray-200 border-solid'>
+                      Top Right Notification
+                    </div>
                   </Notification>
                 ) : null,
             })
-          }
-        >
+          }>
           top-right
         </button>
 
@@ -67,12 +68,13 @@ const Template: ComponentStory<any> = ({}: any) => {
               render: ({ open }) =>
                 open ? (
                   <Notification>
-                    <div className='border border-gray-200 border-solid'>Bottom Left Notification</div>
+                    <div className='border border-gray-200 border-solid'>
+                      Bottom Left Notification
+                    </div>
                   </Notification>
                 ) : null,
             })
-          }
-        >
+          }>
           bottom-left
         </button>
         <button
@@ -81,12 +83,13 @@ const Template: ComponentStory<any> = ({}: any) => {
               render: ({ open }) =>
                 open ? (
                   <Notification>
-                    <div className='border border-gray-200 border-solid'>Bottom Center Notification</div>
+                    <div className='border border-gray-200 border-solid'>
+                      Bottom Center Notification
+                    </div>
                   </Notification>
                 ) : null,
             })
-          }
-        >
+          }>
           bottom-center
         </button>
         <button
@@ -95,12 +98,13 @@ const Template: ComponentStory<any> = ({}: any) => {
               render: ({ open }) =>
                 open ? (
                   <Notification>
-                    <div className='border border-gray-200 border-solid'>Bottom Right Notification</div>
+                    <div className='border border-gray-200 border-solid'>
+                      Bottom Right Notification
+                    </div>
                   </Notification>
                 ) : null,
             })
-          }
-        >
+          }>
           bottom-right
         </button>
       </div>

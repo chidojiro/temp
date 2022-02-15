@@ -42,7 +42,14 @@ export const Tabs = ({ value: valueProp, onChange, children }: Props) => {
   }, []);
 
   const providerValue: TabsProvider = React.useMemo(
-    () => ({ value, handleChange: setValue, content, setContent, tabsCount: tabsCountRef.current, increaseTabsCount }),
+    () => ({
+      value,
+      handleChange: setValue,
+      content,
+      setContent,
+      tabsCount: tabsCountRef.current,
+      increaseTabsCount,
+    }),
     [content, increaseTabsCount, setValue, value]
   );
 

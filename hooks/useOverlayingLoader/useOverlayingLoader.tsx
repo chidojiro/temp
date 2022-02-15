@@ -12,7 +12,11 @@ export type Props = {
 const OVERLAYING_SPINNER_CLASS_NAME = 'hsk-overlaying-spinner';
 const OVERLAYING_SPINNER_DATA_SPINNER_IDS = 'data-spinnerids';
 
-export const useOverlayingLoader = ({ active, host: hostProp, component = 'loading...' }: Props) => {
+export const useOverlayingLoader = ({
+  active,
+  host: hostProp,
+  component = 'loading...',
+}: Props) => {
   const idRef = React.useRef(UUID());
 
   const getHostElement = React.useCallback(() => {
@@ -28,20 +32,27 @@ export const useOverlayingLoader = ({ active, host: hostProp, component = 'loadi
     const foundSpinnerContainer = getOverlayingSpinnerContainer();
     if (!foundSpinnerContainer) return;
 
-    const dataSpinnerIds = (foundSpinnerContainer.getAttribute(OVERLAYING_SPINNER_DATA_SPINNER_IDS) || '')
+    const dataSpinnerIds = (
+      foundSpinnerContainer.getAttribute(OVERLAYING_SPINNER_DATA_SPINNER_IDS) || ''
+    )
       .split(' ')
       .filter(Boolean);
 
     const newDataSpinnerIds = Array.from(new Set([...dataSpinnerIds, idRef.current]));
 
-    foundSpinnerContainer.setAttribute(OVERLAYING_SPINNER_DATA_SPINNER_IDS, newDataSpinnerIds.join(' '));
+    foundSpinnerContainer.setAttribute(
+      OVERLAYING_SPINNER_DATA_SPINNER_IDS,
+      newDataSpinnerIds.join(' ')
+    );
   }, [getOverlayingSpinnerContainer]);
 
   const unregisterSpinnerId = React.useCallback(() => {
     const foundSpinnerContainer = getOverlayingSpinnerContainer();
     if (!foundSpinnerContainer) return;
 
-    const dataSpinnerIds = (foundSpinnerContainer.getAttribute(OVERLAYING_SPINNER_DATA_SPINNER_IDS) || '')
+    const dataSpinnerIds = (
+      foundSpinnerContainer.getAttribute(OVERLAYING_SPINNER_DATA_SPINNER_IDS) || ''
+    )
       .split(' ')
       .filter(Boolean)
       .filter(id => id !== idRef.current)
@@ -88,7 +99,14 @@ export const useOverlayingLoader = ({ active, host: hostProp, component = 'loadi
     } else {
       unregisterSpinnerId();
     }
-  }, [active, getOverlayingSpinnerContainer, registerSpinnerId, component, unregisterSpinnerId, getHostElement]);
+  }, [
+    active,
+    getOverlayingSpinnerContainer,
+    registerSpinnerId,
+    component,
+    unregisterSpinnerId,
+    getHostElement,
+  ]);
 
   React.useLayoutEffect(() => {
     return () => {

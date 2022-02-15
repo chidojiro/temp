@@ -154,17 +154,33 @@ export const useNotification = (props?: Props) => {
 
   React.useEffect(() => {
     ReactDOM.render(
-      <NotificationList placement={placement} offsetEach={offsetEach} offsetX={offsetX} offsetY={offsetY}>
+      <NotificationList
+        placement={placement}
+        offsetEach={offsetEach}
+        offsetX={offsetX}
+        offsetY={offsetY}>
         {Object.keys(allNotifications).map(id => (
           <React.Fragment key={id}>
             {/* // TODO: performance with handleClose */}
-            {allNotifications[id].render({ open: openingNotifications.includes(id), handleClose: () => close(id) })}
+            {allNotifications[id].render({
+              open: openingNotifications.includes(id),
+              handleClose: () => close(id),
+            })}
           </React.Fragment>
         ))}
       </NotificationList>,
       document.getElementById(notificationListId)
     );
-  }, [allNotifications, close, notificationListId, offsetEach, offsetX, offsetY, openingNotifications, placement]);
+  }, [
+    allNotifications,
+    close,
+    notificationListId,
+    offsetEach,
+    offsetX,
+    offsetY,
+    openingNotifications,
+    placement,
+  ]);
 
   return React.useMemo(() => ({ open, close }), [close, open]);
 };

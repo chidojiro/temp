@@ -6,7 +6,12 @@ type Props<T> = {
   children: ReactNode;
 } & (({ component: 'div' } & HTMLDivProps) | ({ component: (props: T) => JSX.Element } & T));
 
-export const ConditionalWrapper = <T,>({ active, component, children, ...componentProps }: Props<T>) => {
+export const ConditionalWrapper = <T,>({
+  active,
+  component,
+  children,
+  ...componentProps
+}: Props<T>) => {
   if (!active) return <>{children}</>;
 
   const Component = component as any;

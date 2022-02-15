@@ -12,7 +12,12 @@ export type Props = HTMLDivProps & {
 
 export const Item = ({ children, content, value }: Props) => {
   const [index, setIndex] = React.useState(-1);
-  const { value: selectedValue, handleChange, setContent, increaseTabsCount } = React.useContext(TabsContext);
+  const {
+    value: selectedValue,
+    handleChange,
+    setContent,
+    increaseTabsCount,
+  } = React.useContext(TabsContext);
 
   React.useEffect(() => {
     const index = increaseTabsCount();

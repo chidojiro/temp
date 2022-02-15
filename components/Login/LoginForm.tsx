@@ -31,7 +31,12 @@ export const LoginForm = () => {
     <div className='w-[400px]'>
       <div className='mb-5 font-bold prose text-center text-h4'>{t('login')}</div>
       <Form methods={methods} onSubmit={onSubmit}>
-        <Form.Input name='email' className='w-full mb-2.5' htmlType='email' placeholder={t('email')} />
+        <Form.Input
+          name='email'
+          className='w-full mb-2.5'
+          htmlType='email'
+          placeholder={t('email')}
+        />
         <Form.ErrorMessage name='email' className='mb-3'></Form.ErrorMessage>
         <Form.Input
           name='password'
@@ -44,7 +49,9 @@ export const LoginForm = () => {
         <Button type='submit' className='w-full font-bold'>
           {t('login')}
         </Button>
-        <div className='mt-5 text-center underline text-medium text-primary'>{t('forgotPassword')}</div>
+        <div className='mt-5 text-center underline text-medium text-primary'>
+          {t('forgotPassword')}
+        </div>
       </Form>
     </div>
   );
