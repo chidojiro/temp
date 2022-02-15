@@ -33,25 +33,29 @@ export const LoginForm = () => {
       <Form methods={methods} onSubmit={onSubmit}>
         <Form.Input
           name='email'
-          className='w-full mb-2.5'
+          className='w-full mb-1'
           htmlType='email'
           placeholder={t('email')}
         />
-        <Form.ErrorMessage name='email' className='mb-3'></Form.ErrorMessage>
+        <Form.ErrorMessage name='email' className='mb-2'></Form.ErrorMessage>
         <Form.Input
           name='password'
-          className='w-full mb-5'
+          className='w-full mb-1'
           htmlType={showPwd ? 'text' : 'password'}
           placeholder={t('password')}
-          innerRight={<div onClick={() => toggleShowPwd()}>{icon}</div>}
+          innerRight={
+            <div className='cursor-pointer' onClick={() => toggleShowPwd()}>
+              {icon}
+            </div>
+          }
         />
-        <Form.ErrorMessage name='password' className='mb-3'></Form.ErrorMessage>
+        <Form.ErrorMessage name='password' className='mb-4'></Form.ErrorMessage>
         <Button type='submit' className='w-full font-bold'>
           {t('login')}
         </Button>
-        <div className='mt-5 text-center underline text-medium text-primary'>
+        <Button variant='link' className='!block mx-auto underline'>
           {t('forgotPassword')}
-        </div>
+        </Button>
       </Form>
     </div>
   );

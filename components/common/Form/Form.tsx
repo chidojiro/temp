@@ -1,5 +1,6 @@
 import { ErrorMessage, Field, FieldProps, Form as HeadlessForm, FormProps } from '@/headless';
 import { HTMLDivProps } from '@/types';
+import classNames from 'classnames';
 import {
   Input,
   InputProps,
@@ -31,8 +32,8 @@ const FormCheckboxGroup = (props: FieldProps & Omit<CheckboxGroupProps, keyof Fi
 const FormRadioGroup = (props: FieldProps & Omit<RadioGroupProps, keyof FieldProps>) => (
   <Field {...props} component={RadioGroup} />
 );
-const FormErrorMessage = ({ name, ...restProps }: HTMLDivProps & { name: string }) => (
-  <p className='text-danger' {...restProps}>
+const FormErrorMessage = ({ name, className, ...restProps }: HTMLDivProps & { name: string }) => (
+  <p className={classNames('text-danger', className)} {...restProps}>
     <ErrorMessage name={name}></ErrorMessage>
   </p>
 );

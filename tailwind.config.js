@@ -79,9 +79,6 @@ const palette = {
     A400: '#ffded9',
     A700: '#ffc8bf',
   },
-  sleepy: {
-    DEFAULT: '#B4B4B4',
-  },
   gray: {
     100: '#F7F7F7',
     200: '#EFEFEF',
@@ -110,6 +107,55 @@ module.exports = {
       h2: '24px',
       h1: '28px',
     },
+    colors: {
+      purple: {
+        ...palette.purple,
+        DEFAULT: palette.purple[500],
+        light: palette.purple[300],
+        dark: palette.purple[700],
+      },
+      green: {
+        ...palette.green,
+        DEFAULT: palette.green[500],
+        light: palette.green[300],
+        dark: palette.green[700],
+      },
+      orange: {
+        ...palette.orange,
+        DEFAULT: palette.orange[500],
+        light: palette.orange[300],
+        dark: palette.orange[700],
+      },
+      primary: {
+        ...palette.blue,
+        DEFAULT: palette.blue[500],
+        light: palette.blue[300],
+        dark: palette.blue[700],
+      },
+      secondary: {
+        ...palette.yellow,
+        DEFAULT: palette.yellow[500],
+        light: palette.yellow[300],
+        dark: palette.yellow[700],
+      },
+      danger: palette.orange[500],
+      warning: palette.yellow[500],
+      gray: {
+        ...palette.gray,
+        DEFAULT: palette.gray[400],
+        light: palette.gray[100],
+        dark: palette.gray[800],
+      },
+      input: { DEFAULT: palette.gray[600], focus: palette.gray[400] },
+      sleepy: '#B4B4B4',
+      white: '#fff',
+      black: '#000',
+      'dark-gray': '#E6E6E6',
+    },
+    fontWeight: {
+      semibold: 500,
+      bold: 700,
+    },
     extend: {
       typography: {
         DEFAULT: {
@@ -123,53 +169,6 @@ module.exports = {
             },
           },
         },
-      },
-      colors: {
-        purple: {
-          ...palette.purple,
-          DEFAULT: palette.purple[500],
-          light: palette.purple[300],
-          dark: palette.purple[700],
-        },
-        green: {
-          ...palette.green,
-          DEFAULT: palette.green[500],
-          light: palette.green[300],
-          dark: palette.green[700],
-        },
-        orange: {
-          ...palette.orange,
-          DEFAULT: palette.orange[500],
-          light: palette.orange[300],
-          dark: palette.orange[700],
-        },
-        primary: {
-          ...palette.blue,
-          DEFAULT: palette.blue[500],
-          light: palette.blue[300],
-          dark: palette.blue[700],
-        },
-        secondary: {
-          ...palette.yellow,
-          DEFAULT: palette.yellow[500],
-          light: palette.yellow[300],
-          dark: palette.yellow[700],
-        },
-        danger: palette.orange.DEFAULT,
-        warning: palette.yellow.DEFAULT,
-        sleepy: palette.sleepy.DEFAULT,
-        gray: {
-          ...palette.gray,
-          DEFAULT: palette.gray[400],
-          light: palette.gray[100],
-          dark: palette.gray[800],
-        },
-        input: { DEFAULT: palette.gray[600], focus: palette.gray[400] },
-        'dark-gray': '#E6E6E6',
-      },
-      fontWeight: {
-        semibold: 500,
-        bold: 700,
       },
     },
   },
