@@ -37,8 +37,7 @@ export const Sidebar = () => {
                 {
                   'bg-dark-gray': menuItem.path === router.pathname,
                 }
-              )}
-            >
+              )}>
               <Icon name='group' className='w-4 h-4 mr-2 text-primary' />
               {menuItem.label}
             </a>
