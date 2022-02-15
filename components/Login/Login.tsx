@@ -5,7 +5,7 @@ import { LoginForm } from './LoginForm';
 export const Login = () => {
   const { t } = useTranslation('login');
   return (
-    <div className='grid h-full grid-cols-2 overflow-hidden'>
+    <div className='grid h-screen grid-cols-2 overflow-hidden'>
       <div className='relative flex items-center justify-center'>
         <img src='images/login2.svg' className='absolute top-[-250px] left-[-85px]' />
         <img src='images/login1.svg' className='absolute bottom-[-215px] left-[-136px]' />
