@@ -1,15 +1,15 @@
-import { ChevronRightIcon, ShoppingCartIcon } from '@heroicons/react/outline';
+import { ChevronRightIcon } from '@heroicons/react/outline';
 import { Button } from '../common';
 import { Icon } from '../icons';
 
 export const Item = () => {
   return (
     <div>
-      <div className='flex mb-4 text-yellow-500'>
+      <div className='flex mb-4 text-secondary'>
         <div className='font-bold'>おすすめ度 1位</div>
       </div>
-      <div className='border border-gray-500 rounded'>
-        <div className='flex items-center justify-between h-10 px-5 py-2 text-white bg-yellow-500 rounded-t'>
+      <div className='border rounded border-gray'>
+        <div className='flex items-center justify-between h-10 px-5 py-2 text-white rounded-t bg-secondary'>
           <div className='flex items-center font-semibold text-medium'>
             <Icon name='repeat' className='w-4 h-4' />
             <span className='mx-2 '>ただいま実施中: </span>
@@ -32,20 +32,20 @@ export const Item = () => {
               </div>
               <div className='mt-8'>
                 <div className='mr-7'>
-                  <span className='font-bold text-yellow-500'>優先度</span>
+                  <span className='font-bold text-secondary'>優先度</span>
                   <span className='px-2 py-1 ml-3 font-semibold text-gray-600 bg-gray-200 rounded-full text-medium-sm'>
                     LINE・メール
                   </span>
                 </div>
               </div>
               <div className='mt-4'>
-                <span className='font-bold text-yellow-500'>おすすめ顧客</span>
+                <span className='font-bold text-secondary'>おすすめ顧客</span>
                 <span className='px-2 py-1 ml-3 font-semibold text-gray-600 bg-gray-200 rounded-full text-medium-sm'>
                   F0(会員)
                 </span>
               </div>
               <div className='mt-4'>
-                <div className='font-bold text-yellow-500 mb-3.5'>施策フロー</div>
+                <div className='font-bold text-secondary mb-3.5'>施策フロー</div>
                 <div className='p-10 rounded bg-gray-light'>
                   <div>Diagram</div>
                   <div className='mt-10'>
@@ -59,7 +59,7 @@ export const Item = () => {
                 </div>
               </div>
             </div>
-            <div className='ml-10 bg-yellow-500 w-60 h-60 opacity-10'></div>
+            <div className='ml-10 bg-secondary w-60 h-60 opacity-10'></div>
           </div>
           <div className='flex justify-center w-full mt-7'>
             <Button className='font-semibold w-[350px]'>この施策を実行する</Button>
