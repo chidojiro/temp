@@ -1,0 +1,1 @@
+export { useAmcharts } from "./useAmcharts"
