@@ -2,10 +2,9 @@ import { ReportDetails } from '@/components';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 const Report = () => {
+  console.log('he');
   return <ReportDetails />;
 };
-
-console.log('he');
 
 export const getServerSideProps = async ({ locale }: any) => ({
   props: {
