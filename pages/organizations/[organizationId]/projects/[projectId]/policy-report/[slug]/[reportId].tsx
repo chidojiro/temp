@@ -5,6 +5,8 @@ const Report = () => {
   return <ReportDetails />;
 };
 
+console.log('he');
+
 export const getServerSideProps = async ({ locale }: any) => ({
   props: {
     ...(await serverSideTranslations(locale, ['common', 'report'])),
