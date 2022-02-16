@@ -2,7 +2,7 @@ import { ChevronRightIcon } from '@heroicons/react/outline';
 import { Button } from '../common';
 import { Icon } from '../icons';
 
-export const Item = () => {
+export const MarketingActionItem = () => {
   return (
     <div>
       <div className='flex mb-4 text-secondary'>
@@ -48,14 +48,6 @@ export const Item = () => {
                 <div className='font-bold text-secondary mb-3.5'>施策フロー</div>
                 <div className='p-10 rounded bg-gray-light'>
                   <div>Diagram</div>
-                  <div className='mt-10'>
-                    <div className='flex text-regular-sm'>
-                      <div className='bg-primary w-5 h-5 flex font-bold text-white justify-center items-center rounded-full text-medium-sm mr-2.5'>
-                        1
-                      </div>
-                      LINE有無判定。LINEありの場合はLINEで配信、なしの場合メールで配信
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>

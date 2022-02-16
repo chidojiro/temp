@@ -22,6 +22,10 @@ export const Sidebar = () => {
       label: t('menuActions'),
     },
     {
+      path: '/my-marketing-action',
+      label: t('menuMyMarketingAction'),
+    },
+    {
       path: '/settings',
       label: t('menuSettings'),
     },
