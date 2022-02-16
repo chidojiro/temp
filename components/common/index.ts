@@ -6,3 +6,4 @@ export * from './Form';
 export * from './Table';
 export * from './Tag';
 export * from './Tabs';
+export * from './Accordion';

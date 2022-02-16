@@ -7,25 +7,25 @@ export type Control = {
   visible: boolean;
 };
 
-export const useVisibilityControl = () => {
-  const [isActive, setIsActive] = React.useState(false);
+export const useVisibilityControl = (defaultVisible?: boolean) => {
+  const [visible, setVisible] = React.useState(!!defaultVisible);
 
   const open = React.useCallback(() => {
-    setIsActive(true);
+    setVisible(true);
   }, []);
 
   const close = React.useCallback(() => {
-    setIsActive(false);
+    setVisible(false);
   }, []);
 
   const toggle = React.useCallback(() => {
-    setIsActive(prev => {
+    setVisible(prev => {
       return !prev;
     });
   }, []);
 
   return React.useMemo<Control>(
-    () => ({ open, close, visible: isActive, toggle }),
-    [open, close, isActive, toggle]
+    () => ({ open, close, visible: visible, toggle }),
+    [open, close, visible, toggle]
   );
 };

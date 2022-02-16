@@ -1,7 +1,7 @@
 import React from 'react';
 import { Option } from '@/types';
 import { useTranslation } from 'next-i18next';
-import { Form } from '@/components';
+import { CheckboxGroup, Form } from '@/components';
 import { CheckboxTag } from './CheckboxTag';
 
 // eslint-disable-next-line @typescript-eslint/ban-types
@@ -30,11 +30,11 @@ export const TargetFilter = ({}: Props) => {
     <div className='flex items-center gap-8'>
       <div className='font-bold'>{t('target')}</div>
       <div className='flex items-center gap-2'>
-        <Form.CheckboxGroup name='target'>
+        <CheckboxGroup>
           {targetOptions.map(({ value, label }) => (
             <CheckboxTag value={value} label={label} key={value} />
           ))}
-        </Form.CheckboxGroup>
+        </CheckboxGroup>
       </div>
     </div>
   );

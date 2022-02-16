@@ -1,17 +1,52 @@
-import { NavItemInfo } from '@/types/navbar';
-import classNames from 'classnames';
 import { useTranslation } from 'next-i18next';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
-import { Icon } from '../icons';
+import { NavItem, NavItemData } from './NavItem';
 
 export const Sidebar = () => {
   const { t } = useTranslation();
-  const router = useRouter();
-  const menu: NavItemInfo[] = [
+
+  const urlPrefix = `/organizations/${1}/projects/${1}`;
+
+  const menu: NavItemData[] = [
     {
       path: '/dashboard',
       label: t('menuDashboard'),
+    },
+    {
+      label: t('menuReport'),
+      children: [
+        {
+          path: `${urlPrefix}/policy-report`,
+          label: t('policyReport'),
+          matches: [
+            '/organizations/[organizationId]/projects/[projectId]/policy-report/[slug]',
+            '/organizations/[organizationId]/projects/[projectId]/policy-report/[slug]/[projectId]',
+          ],
+        },
+        {
+          path: `${urlPrefix}/f2-conversion-rate-trends`,
+          label: t('f2ConversionRateTrends'),
+        },
+        {
+          path: `${urlPrefix}/semi-royal-conversion-rate`,
+          label: t('semiRoyalConversionRate'),
+        },
+        {
+          path: `${urlPrefix}/loyal-conversion-rate`,
+          label: t('loyalConversionRate'),
+        },
+        {
+          path: `${urlPrefix}/loyal-customers`,
+          label: t('numberOfLoyalCustomers'),
+        },
+        {
+          path: `${urlPrefix}/dormant-customers-return`,
+          label: t('returnOfDormantCustomers'),
+        },
+        {
+          path: `${urlPrefix}/f1-dormant-customers-return`,
+          label: t('returnOfF1DormantCustomers'),
+        },
+      ],
     },
     {
       path: '/marketing-action',
@@ -31,18 +66,10 @@ export const Sidebar = () => {
     },
   ];
   return (
-    <div className='flex flex-col border-r border-gray-300 bg-gray-light'>
+    <div className='flex flex-col border-r border-gray-300 bg-gray-light w-[200px]'>
       <div className='flex flex-col flex-grow'>
         {menu.map(menuItem => (
-          <Link key={menuItem.label} href={menuItem.path}>
-            <a
-              className={classNames('flex text-medium items-center px-6 py-2.5 hover:bg-dark-gray', {
-                'bg-dark-gray': menuItem.path === router.pathname,
-              })}>
-              <Icon name='group' className='w-4 h-4 mr-2 text-primary' />
-              {menuItem.label}
-            </a>
-          </Link>
+          <NavItem key={menuItem.label} data={menuItem} />
         ))}
       </div>
     </div>
