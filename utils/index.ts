@@ -7,3 +7,4 @@ export { NumberUtils } from './number';
 export { AssertUtils } from './assert';
 export { CookiesUtils } from './CookiesUtils';
 export { Logger } from './Logger';
+export { UriUtils } from './uri';

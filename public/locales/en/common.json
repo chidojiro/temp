@@ -3,5 +3,13 @@
   "menuMarketingAction": "Marketing actions",
   "menuActions": "Marketing actions",
   "menuMyMarketingAction": "My Marketing Action",
-  "menuSettings": "Settings"
+  "menuSettings": "Settings",
+  "menuReport": "Report",
+  "policyReport": "Policy Report",
+  "f2ConversionRateTrends": "F2 Conversion Rate Trends",
+  "semiRoyalConversionRate": "Semi-Royal Conversion Rate",
+  "loyalConversionRate": "Loyal Conversion Rate",
+  "numberOfLoyalCustomers": "Number of loyal customers",
+  "returnOfDormantCustomers": "Return of dormant customers",
+  "returnOfF1DormantCustomers": "Return of F1 dormant customers"
 }

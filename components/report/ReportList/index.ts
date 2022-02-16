@@ -1,1 +1,1 @@
-export { ReportList } from './ReportList';
+export { ReportList, reportListPageSlugs } from './ReportList';

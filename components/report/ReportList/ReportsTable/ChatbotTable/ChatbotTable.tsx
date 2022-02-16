@@ -1,8 +1,10 @@
 import { Table } from '@/components';
 import { ClassName } from '@/types';
+import { UriUtils } from '@/utils';
 import { useTranslation } from 'next-i18next';
 import Link from 'next/link';
 import React from 'react';
+import URI from 'urijs';
 
 const data = [
   {
@@ -77,6 +79,7 @@ type Props = ClassName & {};
 // eslint-disable-next-line no-empty-pattern
 export const ChatbotTable = ({ className }: Props) => {
   const { t } = useTranslation('report');
+  const uri = new URI();
 
   return (
     <Table className={className}>
@@ -96,7 +99,7 @@ export const ChatbotTable = ({ className }: Props) => {
               {item.name === 'all' ? (
                 t('all')
               ) : (
-                <Link passHref href={`/reports/${item.id}`}>
+                <Link passHref href={uri.segment(item.id).href()}>
                   <a className='underline text-primary'>{item.name}</a>
                 </Link>
               )}
