@@ -1,13 +1,19 @@
-import { MyMarketingAction } from '@/components/MyMarketingAction';
+import { Layout, MyMarketingAction } from '@/components';
+import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 function MyMarketingActionPage() {
-  return <MyMarketingAction />;
+  const { t } = useTranslation();
+  return (
+    <Layout title={t('menuMyMarketingAction')}>
+      <MyMarketingAction />
+    </Layout>
+  );
 }
 
 export const getStaticProps = async ({ locale }: any) => ({
   props: {
-    ...(await serverSideTranslations(locale)),
+    ...(await serverSideTranslations(locale, ['common', 'myMarketingAction'])),
   },
 });
 
