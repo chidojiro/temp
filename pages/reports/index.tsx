@@ -1,11 +1,11 @@
-import { ReportsPage } from '@/components';
+import { ReportList } from '@/components';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 const Reports = () => {
-  return <ReportsPage />;
+  return <ReportList />;
 };
 
-export const getStaticProps = async ({ locale }: any) => ({
+export const getServerSideProps = async ({ locale }: any) => ({
   props: {
     ...(await serverSideTranslations(locale, ['common', 'report'])),
   },
