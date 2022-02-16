@@ -1,0 +1,1 @@
+export { MyMarketingAction } from './MyMarketingAction';
